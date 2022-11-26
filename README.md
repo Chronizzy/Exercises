@@ -1,3 +1,6 @@
 # Exercises
 
 I HECKIN LOOOVE BOOBA
+
+
+NO CAP ON THE STACK FRFR
