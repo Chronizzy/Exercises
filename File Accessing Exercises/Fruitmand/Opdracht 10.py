@@ -1,4 +1,12 @@
-from fruitmand1 import fruitmand
+from fruitmand2 import fruitmand
 
+gewicht = []
 for i in fruitmand:
-    print(i['name'].capitalize(),'weegt',  i['weight'], 'gram.')
+    gewicht.append(i['weight'])
+
+gewicht.sort()
+
+for i in gewicht:
+    for j in fruitmand:
+        if j['weight'] == i:
+            print(j['name'].capitalize(),'weegt',  j['weight'], 'gram.')
