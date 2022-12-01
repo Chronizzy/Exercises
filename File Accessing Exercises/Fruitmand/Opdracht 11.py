@@ -7,11 +7,11 @@ for i in fruitmand:
     if i['color'] not in kleuren:
         kleuren.append(i['color'])
 
-kleurVraag = input(f'Kies een kleur uit het volgende: {kleuren}')
+kleurVraag = (input(f'Kies een kleur uit het volgende: {kleuren}')).lower()
 
 while kleurVraag not in kleuren:
     print(f'De kleur {kleurVraag} zit niet in de mand')
-    kleurVraag = input(f'Kies een kleur uit het volgende: {kleuren}')
+    kleurVraag = (input(f'Kies een kleur uit het volgende: {kleuren}')).lower()
 
 rondeVruchten = 0
 nietrondeVruchten = 0
