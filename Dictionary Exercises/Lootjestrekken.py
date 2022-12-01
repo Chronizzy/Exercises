@@ -30,4 +30,4 @@ while len(loten) != len (namen):
 print(loten)
 
 for i, j in loten.items():
-    print(i, 'heeft', j, 'getrokken')
+    print(i.capitalize() , 'heeft', j.capitalize(), 'getrokken!')
