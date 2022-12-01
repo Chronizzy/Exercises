@@ -5,11 +5,7 @@ loten = {}
 keys = []
 values = []
 
-keuze = 'ja'
-
-while keuze == 'ja':
-    if len(namen) < 3:
-        keuze == 'ja'
+while True:
     naamVraag = input('naam: ').lower()
     if naamVraag not in namen:
         namen.append(naamVraag)
@@ -17,7 +13,7 @@ while keuze == 'ja':
     if len(namen) >= 3:
         ask = input('Wil je nog namen toevoegen? ja / nee ')
         if (ask.lower()).startswith('n'):
-            keuze = 'nee'
+            break
         else:
             continue
         
