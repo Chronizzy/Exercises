@@ -1,9 +1,10 @@
 import random
 
-loten = {}
 namen = []
+loten = {}
 keys = []
 values = []
+
 keuze = 'ja'
 
 while keuze == 'ja':
@@ -15,8 +16,10 @@ while keuze == 'ja':
 
     if len(namen) >= 3:
         ask = input('Wil je nog namen toevoegen? ja / nee ')
-        if ask.lower() == 'nee':
+        if (ask.lower()).startswith('n'):
             keuze = 'nee'
+        else:
+            continue
         
 
 while len(loten) != len (namen):
@@ -28,4 +31,7 @@ while len(loten) != len (namen):
            values.append(randomNaam)
             
 
-print(len(loten), loten)
+print(loten)
+
+for i, j in loten.items():
+    print(i, 'heeft', j, 'getrokken')
