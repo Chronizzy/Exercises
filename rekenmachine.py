@@ -43,8 +43,8 @@ def reinputter(x):
     global invoer
     invoer = input(x)
     try:
-        int(invoer)
-        x = int(invoer) / 1
+        float(invoer)
+        x = float(invoer)
         if firstNumber  > 0 or firstNumber < 0:
             secondNumber = x
             print(numberFunction(firstNumber, secondNumber)  )
@@ -64,7 +64,7 @@ def reinputter(x):
             calculator(invoer.lower())
         if invoer == 'stop':
             calculator(invoer)
-        if secondNumber == 0:
+        else:
             reinputter('???')
 
 
