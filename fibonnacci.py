@@ -1,14 +1,12 @@
-
 amount = int(input("dawg: "))
-amountLeft = amount
 
-def fib(n, y):
-    global amountLeft
-    amountLeft -= 1
+def fib(n, y, z):
+    amountLeft = z
     if amountLeft != -1 and amount > 0:
         print(n, y)
-        return (fib(n+y, y+(n+y)))
+        amountLeft -= 1
+        return (fib(n+y, y+(n+y), amountLeft))
 
 
     
-fib(0,1)
+fib(0,1, amount)

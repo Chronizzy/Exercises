@@ -46,7 +46,7 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
                 print(calculator(firstNumber, secondNumber, choice))
 
         if choice == 'agane' and invoer not in ('subtraction', 'addition', 'multiplication', 'division', 'double', 'half', 'increment', 'decrement'):
-            reinputter('thats not a choice cuh? try again: ' '\n  multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement  ', choice, firstNumber, secondNumber)
+            reinputter('thats not a choice cuh? try again: ' '\n  multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement:  ', choice, firstNumber, secondNumber)
         
     except:
         if invoer in ('subtraction', 'addition', 'multiplication', 'division'):
