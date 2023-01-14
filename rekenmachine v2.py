@@ -66,12 +66,16 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
 
 
         if choice == 'agane' and invoer not in ('subtraction', 'addition', 'multiplication', 'division', 'double', 'half', 'increment', 'decrement'):
-            reinputter('thats not a choice cuh? try again: ' '\n  multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement\n Choice: ', choice, firstNumber, secondNumber)
+            reinputter('thats not a choice cuh? try again: ' '\n  A) multiplication\n B) addition\n C) division\n D) subtraction\n E) double\n F) half\n G) increment\n H) decrement\n Choice: ', choice, firstNumber, secondNumber)
         
     except:
-        if invoer in ('subtraction', 'addition', 'multiplication', 'division'):
-            choice = invoer
-            
+        lettersList = ['A', 'B', 'C', 'D']
+        choicesList = ['multiplication','addition', 'division', 'subtraction']
+
+        if invoer.capitalize() in lettersList:
+            indexNr = lettersList.index(invoer.capitalize())
+            choice = choicesList[indexNr]
+                
             
             try:
                 float(firstNumber)              
@@ -87,8 +91,11 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
                 if firstNumber == 'unknown':
                     reinputter('Choose first number: ', choice, firstNumber, secondNumber)
 
-        if invoer in ('double', 'half', 'increment', 'decrement'):
-            choice = invoer
+        choicesList = ['double', 'half', 'increment', 'decrement']
+        lettersList =  ['E', 'F', 'G', 'H']
+        if invoer.capitalize() in lettersList:
+            indexNr = lettersList.index(invoer.capitalize())
+            choice = choicesList[indexNr]
 
             try:
                 float(firstNumber)           
@@ -107,7 +114,7 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
             except:                         
                 if firstNumber == 'unknown':
                     reinputter(f'Choose the number you want to {choice}: ', choice, firstNumber, secondNumber)
-            
+                
 
         if invoer.capitalize() == 'Y':
             reUse('y')
@@ -121,14 +128,14 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
             reinputter('Wanna go again?: Y/N ', choice, firstNumber, secondNumber)
             
 def reUseAns(x):
-    reinputter(f'What do you want to do with: {x}?\n multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement\n Choice: ', 'agane', float(x), 'unknown')
+    reinputter(f'What do you want to do with: {x}?\n A) multiplication\n B) addition\n C) division\n D) subtraction\n E) double\n F) half\n G) increment\n H) decrement\n Choice: ', 'agane', float(x), 'unknown')
 
 def reUse(x):
     if x == 'y':
-        reinputter(('Choose ur method: \n multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement\n Choice: '), 'agane','unknown', 'unknown')
+        reinputter(('Choose ur method: \n A) multiplication\n B) addition\n C) division\n D) subtraction\n E) double\n F) half\n G) increment\n H) decrement\n Choice: '), 'agane','unknown', 'unknown')
     if x == 'n':
         exit()
     else:
-        reinputter('Choose ur method: \n multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement\n Choice: ', 'agane','unknown', 'unknown')
+        reinputter('Choose ur method: \n A) multiplication\n B) addition\n C) division\n D) subtraction\n E) double\n F) half\n G) increment\n H) decrement\n Choice: ', 'agane','unknown', 'unknown')
 
-reinputter('Choose ur method: \n multiplication\n addition\n division\n subtraction\n double\n half\n increment\n decrement\n Choice: ', 'agane','unknown', 'unknown')
+reinputter('Choose ur method: \n A) multiplication\n B) addition\n C) division\n D) subtraction\n E) double\n F) half\n G) increment\n H) decrement\n Choice: ', 'agane','unknown', 'unknown')
