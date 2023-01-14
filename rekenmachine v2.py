@@ -32,9 +32,9 @@ def AnsRem(x, f1, f2, cc):
         printables = (f1, '+', f2, '=', x)
     if cc in ('decrement', 'subtraction'):
         printables = (f1, '-', f2, '=', x)
-    if cc in ('division' or 'half'):
+    if cc in ('division', 'half'):
         printables = (f1, '/', f2, '=', x)
-    if cc in ('multiplication' or 'double'):
+    if cc in ('multiplication', 'double'):
         printables = (f1, '*', f2, '=', x)
     print(printables) 
     reinputter('Wanna use this answer for ur next calculation?: YS/NO \n Choice: ', 'unkown', answerables, 'unkown')
@@ -121,11 +121,10 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
         if invoer.capitalize() == 'N' or invoer.lower() == 'no':
             exit()
         if invoer.lower() == 'ys':
-            print(firstNumber)
             reUseAns(firstNumber)
 
         else:
-            reinputter('Wanna go again?: Y/N ', choice, firstNumber, secondNumber)
+            reinputter("Wanna go again?, it's invalid: Y/N ", choice, firstNumber, secondNumber)
             
 def reUseAns(x):
     reinputter(f'What do you want to do with: {x}?\n A) multiplication\n B) addition\n C) division\n D) subtraction\n E) double\n F) half\n G) increment\n H) decrement\n Choice: ', 'agane', float(x), 'unknown')
