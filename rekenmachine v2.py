@@ -29,14 +29,14 @@ def AnsRem(x, f1, f2, cc):
     printables = ''
     answerables = x
     if cc in ('increment','addition'):
-        printables = (f1, '+', f2, '=', x)
+        printables = '+'
     if cc in ('decrement', 'subtraction'):
-        printables = (f1, '-', f2, '=', x)
+        printables = '-'
     if cc in ('division', 'half'):
-        printables = (f1, '/', f2, '=', x)
+        printables = '/'
     if cc in ('multiplication', 'double'):
-        printables = (f1, '*', f2, '=', x)
-    print(printables) 
+        printables =  '*'
+    print(f'{f1} {printables} {f2} = {x}') 
     reinputter('Wanna use this answer for ur next calculation?: YS/NO \n Choice: ', 'unkown', answerables, 'unkown')
     
 
@@ -50,7 +50,14 @@ def reinputter(inputtable, globalChoiceReIN, globalFirstNumberReIN, globalSecond
         if choice in ('subtraction', 'addition', 'multiplication', 'division'):
             if firstNumber == 'unknown':
                 firstNumber = float(invoer)
-                reinputter('Choose second number: ', globalChoiceReIN, firstNumber, secondNumber)
+                if choice == 'subtraction':
+                    reinputter('Choose the number you want to subtract: ', globalChoiceReIN, firstNumber, secondNumber)
+                if choice == 'addition':
+                    reinputter('Choose the number you want to add: ', globalChoiceReIN, firstNumber, secondNumber)
+                if choice == 'division':
+                    reinputter('Choose the number you want to divide by: ', globalChoiceReIN, firstNumber, secondNumber)
+                if choice == 'multiplication':
+                    reinputter('Choose the number you want to multiply by ', globalChoiceReIN, firstNumber, secondNumber)
             if secondNumber == 'unknown':
                 secondNumber = float(invoer)
                 answer = (calculator(firstNumber, secondNumber, choice))
